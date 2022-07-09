@@ -17,3 +17,13 @@ namespace Andromeda
 
     }
 }
+
+namespace Communication { 
+    class Http { }
+    class Ftp { }
+}
+
+namespace Disk.FileSystem
+{
+    class File_ { }
+}

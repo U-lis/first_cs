@@ -1,4 +1,7 @@
-﻿namespace ConsoleApp1
+﻿using Communication;
+using Disk.FileSystem;
+
+namespace ConsoleApp1
 {
     class Program
     {
@@ -32,6 +35,9 @@
             MilkyWay.Earth e1 = new MilkyWay.Earth();
             Andromeda.Earth e2 = new Andromeda.Earth();
 
+            Http http = new Http();
+            Ftp ftp = new Ftp();
+            File_ file = new File_();
         }
     }
 
