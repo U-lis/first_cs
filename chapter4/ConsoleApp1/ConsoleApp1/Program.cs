@@ -15,10 +15,10 @@
 
     class Book
     {
-        string Title;
-        decimal ISBN13;
-        string Contents;
-        string Author;
-        int PageCount;
+        public string Title;
+        public decimal ISBN13;
+        public string Contents;
+        public string Author;
+        public int PageCount;
     }
 }
