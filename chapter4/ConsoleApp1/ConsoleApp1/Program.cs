@@ -20,6 +20,10 @@
             Console.WriteLine("Person Count: " + Person.PersonCount);
             Person p2 = new Person("arstarst");
             Console.WriteLine("Person Count: " + Person.PersonCount);
+
+            // Codes for Person2: Singleton
+            // Person2 pp = new Person2("Not President");  // This cannot be done
+            Person2.President.DisplayName();
         }
     }
 

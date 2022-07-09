@@ -24,4 +24,17 @@ namespace ConsoleApp1
             Console.WriteLine(PersonCount);
         }
     }
+
+    internal class Person2 {
+
+        static public Person2 President = new Person2("President");
+        string _name;
+        private Person2(string name) {
+            _name = name;  
+        }
+
+        public void DisplayName() {
+            Console.WriteLine(_name);
+        }
+    }
 }
