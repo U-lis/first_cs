@@ -17,9 +17,11 @@
             // Codes for Person
             Person p = new Person("arst");
             p.WriteName();
-            Console.WriteLine("Person Count: " + Person.PersonCount);
+            //Console.WriteLine("Person Count: " + Person.PersonCount);
+            Person.GetPersonCount();
             Person p2 = new Person("arstarst");
-            Console.WriteLine("Person Count: " + Person.PersonCount);
+            //Console.WriteLine("Person Count: " + Person.PersonCount);
+            Person.GetPersonCount();
 
             // Codes for Person2: Singleton
             // Person2 pp = new Person2("Not President");  // This cannot be done
