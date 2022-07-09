@@ -38,6 +38,12 @@ namespace ConsoleApp1
             Http http = new Http();
             Ftp ftp = new Ftp();
             File_ file = new File_();
+
+            // Codes for property
+            Circle o = new Circle();
+            o.Pi = 3.14159265;
+            double piValue = o.Pi;
+            Console.WriteLine(piValue);
         }
     }
 
