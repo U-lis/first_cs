@@ -4,13 +4,9 @@
     {
         static void Main(string[] args) {
             // Codes for Book
-            Book gulliver = new Book();
-
-            gulliver.Title = "걸리버 여행기";
-            gulliver.Author = "Jonathan Swift";
-            gulliver.ISBN13 = 9788983920775m;
-            gulliver.Contents = "contents";
-            gulliver.PageCount = 384;
+            Book gulliver = new Book("걸리버");
+            Book huckleberry = new Book("허클베리 핀", 1234567890m);
+            Book alice = new Book("이상한 나라의 앨리스", 9876543210m, "Lewis Carroll");
 
 
             // Codes for Math
@@ -22,15 +18,6 @@
             Person p = new Person("arst");
             p.WriteName();
         }
-    }
-
-    class Book
-    {
-        public string Title;
-        public decimal ISBN13;
-        public string Contents;
-        public string Author;
-        public int PageCount;
     }
 
     class Math {
