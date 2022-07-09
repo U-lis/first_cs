@@ -17,6 +17,9 @@
             // Codes for Person
             Person p = new Person("arst");
             p.WriteName();
+            Console.WriteLine("Person Count: " + Person.PersonCount);
+            Person p2 = new Person("arstarst");
+            Console.WriteLine("Person Count: " + Person.PersonCount);
         }
     }
 

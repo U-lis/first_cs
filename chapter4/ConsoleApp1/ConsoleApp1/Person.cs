@@ -8,14 +8,20 @@ namespace ConsoleApp1
 {
     internal class Person
     {
+        static public int PersonCount = 0;
         string _name;
 
         public Person(string name) {
+            PersonCount++;
             _name = name;
         }
 
         public void WriteName() {
             Console.WriteLine("Name: " + _name);
+        }
+
+        public void GetPersoncount() { 
+            Console.WriteLine(PersonCount);
         }
     }
 }
