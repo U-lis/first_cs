@@ -3,7 +3,7 @@
     class Program
     {
         static void Main(string[] args) {
-            // Codes for book
+            // Codes for Book
             Book gulliver = new Book();
 
             gulliver.Title = "걸리버 여행기";
@@ -13,11 +13,14 @@
             gulliver.PageCount = 384;
 
 
-            // Codes for math
+            // Codes for Math
             Math m = new Math();
             int result = m.f(10);
             Console.WriteLine(result);
 
+            // Codes for Person
+            Person p = new Person("arst");
+            p.WriteName();
         }
     }
 
