@@ -26,6 +26,12 @@
             // Codes for Person2: Singleton
             // Person2 pp = new Person2("Not President");  // This cannot be done
             Person2.President.DisplayName();
+
+
+            // Codes for namespace
+            MilkyWay.Earth e1 = new MilkyWay.Earth();
+            Andromeda.Earth e2 = new Andromeda.Earth();
+
         }
     }
 
