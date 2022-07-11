@@ -49,6 +49,35 @@ namespace ConsoleApp1
             // Codes for inheritance
             Netbook netbook = new Netbook();
             netbook.Boot();
+
+            // Codes for as, is
+            Computer com = new Computer();
+            Notebook notebook = com as Notebook;
+
+            if (notebook != null) {
+                notebook.CloseLid();
+            }
+
+            // This code will not be compiled
+            //int n = 5;
+            //if ((n as String) != null) {
+            //    Console.WriteLine("n is string type");
+            //}
+
+            // This code will not be compiled
+            //string txt = "string";
+            //if ((txt as int) != null) {
+            //    Console.WriteLine("txt is int type");
+            //}
+
+            int n = 5;
+            if (n is string) { 
+                Console.WriteLine("n is string type");
+            }
+            string txt = "string";
+            if (txt is int) {
+                Console.WriteLine("txt is int type");
+            }
         }
     }
 
