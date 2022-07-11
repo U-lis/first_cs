@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Notebook {
+    internal class Computer { 
         bool powerOn;
-        public void Boot() { }
-        public void ShutDown() { }
-        public void Reset() { }
+        public void Boot() {
+            Console.WriteLine("Boot");
+        }
+        public void ShutDown() { 
+            Console.WriteLine("Shut Down");
+        
+        }
+        public void Reset() { 
+            Console.WriteLine("Reset");
+        }
+    }
 
+    internal class Notebook: Computer {
         bool fingerScan;
         public bool HasFinderScanDevice() {
             return fingerScan;
         }
     }
 
-    internal class Desktop { 
-        bool powerOn;
-        public void Boot() { }
-        public void ShutDown() { }
-        public void Reset() { }
+    internal class Desktop: Computer { 
         
     }
 
-    internal class Netbook { 
-        bool powerOn;
-        public void Boot() { }
-        public void ShutDown() { }
-        public void Reset() { }
+    internal class Netbook: Computer { 
     }
 }
