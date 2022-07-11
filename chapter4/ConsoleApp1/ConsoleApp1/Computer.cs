@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     internal class Computer { 
-        bool powerOn;
+        protected bool powerOn;
         public void Boot() {
             Console.WriteLine("Boot");
         }
@@ -24,6 +24,11 @@ namespace ConsoleApp1
         bool fingerScan;
         public bool HasFinderScanDevice() {
             return fingerScan;
+        }
+        public void CloseLid() {
+            if (powerOn) {
+                ShutDown();
+            }
         }
     }
 
