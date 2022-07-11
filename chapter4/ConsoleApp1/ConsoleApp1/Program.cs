@@ -44,6 +44,11 @@ namespace ConsoleApp1
             o.Pi = 3.14159265;
             double piValue = o.Pi;
             Console.WriteLine(piValue);
+
+
+            // Codes for inheritance
+            Netbook netbook = new Netbook();
+            netbook.Boot();
         }
     }
 
