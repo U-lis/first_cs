@@ -93,6 +93,11 @@ namespace ConsoleApp1
 
             Notebook notebook2 = new Notebook();
             notebook2.Boot();
+
+            // Codes for operator overload
+            Kilogram kg1 = new Kilogram(10);
+            Kilogram kg2 = new Kilogram(15);
+            Kilogram kg3 = kg1.Add(kg2);
         }
     }
 
