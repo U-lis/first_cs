@@ -32,7 +32,7 @@ namespace ConsoleApp1
         }
 
         override public void Boot() {
-            Console.WriteLine("Turn on hardware");
+            base.Boot();
             Console.WriteLine("Turn on monitor");
         }
     }

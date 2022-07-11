@@ -90,6 +90,9 @@ namespace ConsoleApp1
 
             Mammal lion2 = lion;
             lion2.Move();
+
+            Notebook notebook2 = new Notebook();
+            notebook2.Boot();
         }
     }
 
