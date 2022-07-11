@@ -18,6 +18,10 @@ namespace ConsoleApp1
             return new Kilogram(this.mass + target.mass);
         }
 
+        public static Kilogram operator +(Kilogram op1, Kilogram op2) {
+            return new Kilogram(op1.mass+op2.mass);
+        }
+
         public override string ToString() {
             return mass + " kg";
         }

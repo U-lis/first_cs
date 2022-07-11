@@ -98,6 +98,9 @@ namespace ConsoleApp1
             Kilogram kg1 = new Kilogram(10);
             Kilogram kg2 = new Kilogram(15);
             Kilogram kg3 = kg1.Add(kg2);
+            Console.WriteLine(kg3.ToString());
+            Kilogram kg4 = kg1 + kg2;
+            Console.WriteLine(kg4.ToString());
         }
     }
 
