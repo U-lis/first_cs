@@ -78,6 +78,18 @@ namespace ConsoleApp1
             if (txt is int) {
                 Console.WriteLine("txt is int type");
             }
+
+            // Codes for polymorphism
+            Lion lion = new Lion();
+            Whale whale = new Whale();
+            Human human = new Human();
+
+            lion.Move();
+            whale.Move();
+            human.Move();
+
+            Mammal lion2 = lion;
+            lion2.Move();
         }
     }
 
