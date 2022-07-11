@@ -8,8 +8,8 @@ namespace ConsoleApp1
 {
     internal class Computer { 
         protected bool powerOn;
-        public void Boot() {
-            Console.WriteLine("Boot");
+        virtual public void Boot() {
+            Console.WriteLine("Turn on hardware");
         }
         public void ShutDown() { 
             Console.WriteLine("Shut Down");
@@ -29,6 +29,11 @@ namespace ConsoleApp1
             if (powerOn) {
                 ShutDown();
             }
+        }
+
+        override public void Boot() {
+            Console.WriteLine("Turn on hardware");
+            Console.WriteLine("Turn on monitor");
         }
     }
 
