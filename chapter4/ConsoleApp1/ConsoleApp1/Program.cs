@@ -108,7 +108,9 @@ namespace ConsoleApp1
             Yen yen = new Yen(13);
 
             // This makes compile time error
-            won = yen;
+            won = yen;  // Can do implicit
+            won = (Won)yen;  // Can do explicit
+            Console.WriteLine(won.ToString());
         }
     }
 

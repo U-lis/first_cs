@@ -17,26 +17,34 @@ namespace ConsoleApp1
         }
     }
 
-    internal class Won: Currency {
-        public Won(decimal money): base(money) {
+    internal class Won : Currency
+    {
+        public Won(decimal money) : base(money) {
         }
 
         public override string ToString() {
             return Money + " won";
         }
+
+        public static implicit operator Won(Yen yen) {
+            return new Won(yen.Money * 13m);
+        }
     }
 
-    internal class Dollar : Currency {
+    internal class Dollar : Currency
+    {
         public Dollar(decimal money) : base(money) { }
         public override string ToString() {
             return Money + " dollar";
         }
     }
 
-    internal class Yen: Currency {
+    internal class Yen : Currency
+    {
         public Yen(decimal money) : base(money) { }
 
         public override string ToString() {
             return Money + " Yen";
         }
     }
+}
