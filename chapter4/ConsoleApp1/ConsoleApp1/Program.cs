@@ -5,6 +5,12 @@ namespace ConsoleApp1
 {
     class Program
     {
+        // Codes for delegate
+        // 매개변수 3개 받고 void return 하는 delegate 선언.
+        // delegate 이름이나 인자명은 사실 맘대로 해도 된다. 약간 추상화 느낌.
+        delegate void WorkDelegate(char arg1, int arg2, int arg3);
+        delegate int CalcDelegate(int arg2, int arg3);
+
         static void Main(string[] args) {
             // Codes for Book
             Book gulliver = new Book("걸리버");
@@ -120,6 +126,25 @@ namespace ConsoleApp1
             DrawingObject line = new Line(new Point(10, 10), new Point(20, 20));
             line.Draw();
             line.Move();
+
+            // Codes for delegate
+            Mathematics math = new Mathematics();
+            WorkDelegate work = math.Calculate;
+
+            work('+', 10, 5);
+            work('-', 10, 5);
+            work('*', 10, 5);
+            work('/', 10, 5);
+
+            CalcDelegate calc = Mathematics.Add;
+            calc += Mathematics.Subtract;
+            calc += Mathematics.Multiply;
+            calc += Mathematics.Divide;
+
+            calc(10, 5);
+
+            calc -= Mathematics.Multiply;
+            calc(10, 5);
         }
     }
 
