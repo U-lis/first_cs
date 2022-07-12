@@ -115,6 +115,11 @@ namespace ConsoleApp1
             //Won won1 = dollar;  // Cannot do implicit type casting
             Won won2 = (Won)dollar; // Only can do explicit type casting
             Console.WriteLine(won2.ToString());
+
+            // Codes for abstract class
+            DrawingObject line = new Line(new Point(10, 10), new Point(20, 20));
+            line.Draw();
+            line.Move();
         }
     }
 
