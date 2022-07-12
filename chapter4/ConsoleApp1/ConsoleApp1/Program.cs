@@ -111,6 +111,10 @@ namespace ConsoleApp1
             won = yen;  // Can do implicit
             won = (Won)yen;  // Can do explicit
             Console.WriteLine(won.ToString());
+
+            //Won won1 = dollar;  // Cannot do implicit type casting
+            Won won2 = (Won)dollar; // Only can do explicit type casting
+            Console.WriteLine(won2.ToString());
         }
     }
 

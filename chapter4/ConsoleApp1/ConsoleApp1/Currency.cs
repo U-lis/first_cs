@@ -29,6 +29,10 @@ namespace ConsoleApp1
         public static implicit operator Won(Yen yen) {
             return new Won(yen.Money * 13m);
         }
+
+        public static explicit operator Won(Dollar dollar) {
+            return new Won(dollar.Money * 1000m);
+        }
     }
 
     internal class Dollar : Currency
