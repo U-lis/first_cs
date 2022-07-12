@@ -101,6 +101,14 @@ namespace ConsoleApp1
             Console.WriteLine(kg3.ToString());
             Kilogram kg4 = kg1 + kg2;
             Console.WriteLine(kg4.ToString());
+
+            // Codes for type casting between classes
+            Won won = new Won(1000);
+            Dollar dollar = new Dollar(1);
+            Yen yen = new Yen(13);
+
+            // This makes compile time error
+            won = yen;
         }
     }
 
