@@ -11,6 +11,16 @@ namespace ConsoleApp1
         delegate void WorkDelegate(char arg1, int arg2, int arg3);
         delegate int CalcDelegate(int arg2, int arg3);
 
+        // Codes for event
+        static void PrintPrime(object sender, CallbackArg arg) {
+            Console.Write((arg as PrimeCallbackArg).Prime + ", ");
+        }
+
+        static int Sum;
+        static void SumPrime(object sender, CallbackArg arg) {
+            Sum += (arg as PrimeCallbackArg).Prime;
+        }
+
         static void Main(string[] args) {
             // Codes for Book
             Book gulliver = new Book("걸리버");
@@ -145,6 +155,21 @@ namespace ConsoleApp1
 
             calc -= Mathematics.Multiply;
             calc(10, 5);
+
+            // Codes for event
+            //// Code with delegate
+            PrimeGenerator gen = new PrimeGenerator();
+            PrimeGenerator.PrimeDelegate callprint = PrintPrime;
+            gen.AddDelegate(callprint);
+            PrimeGenerator.PrimeDelegate callsum = SumPrime;
+            gen.AddDelegate(callsum);
+
+            gen.Run(10);
+            Console.WriteLine();
+            Console.WriteLine(Sum);
+
+            gen.RemoveDelegate(callsum);
+            gen.Run(15);
         }
     }
 
