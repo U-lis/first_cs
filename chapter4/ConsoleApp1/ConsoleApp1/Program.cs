@@ -167,6 +167,18 @@ namespace ConsoleApp1
 
             gen.PrimeGenerated -= SumPrime;
             gen.Run(15);
+            Console.WriteLine();
+
+            // Codes for indexer
+            IntegerText aInt = new IntegerText(123456);
+            int step = 1;
+            for (int i = 0; i < aInt.ToString().Length; i++) {
+                Console.WriteLine(step + " 의 자릿수: " + aInt[i]);
+                step *= 10;
+            }
+
+            aInt[3] = '1'; // 1 based index
+            Console.WriteLine(aInt.toInt32());
         }
     }
 
