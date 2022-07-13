@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class CallbackArg { }
-
-    class PrimeCallbackArg: CallbackArg {
+    class PrimeCallbackArg: EventArgs {
         public int Prime;
 
         public PrimeCallbackArg(int prime) {
@@ -17,22 +15,12 @@ namespace ConsoleApp1
     }
 
     class PrimeGenerator {
-        public delegate void PrimeDelegate(object sender, CallbackArg arg);
-
-        PrimeDelegate callbacks;
-
-        public void AddDelegate(PrimeDelegate callback) {
-            callbacks = Delegate.Combine(callbacks, callback) as PrimeDelegate;
-        }
-
-        public void RemoveDelegate(PrimeDelegate callback) {
-            callbacks = Delegate.Remove(callbacks, callback) as PrimeDelegate;
-        }
+        public event EventHandler PrimeGenerated;
 
         public void Run(int limit) {
             for (int i = 2; i <= limit; i++) {
-                if (IsPrime(i) && callbacks != null) {
-                    callbacks(this, new PrimeCallbackArg(i));
+                if (IsPrime(i) && PrimeGenerated != null) {
+                    PrimeGenerated(this, new PrimeCallbackArg(i));
                 }
             }
         }

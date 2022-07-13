@@ -12,12 +12,12 @@ namespace ConsoleApp1
         delegate int CalcDelegate(int arg2, int arg3);
 
         // Codes for event
-        static void PrintPrime(object sender, CallbackArg arg) {
+        static void PrintPrime(object sender, EventArgs arg) {
             Console.Write((arg as PrimeCallbackArg).Prime + ", ");
         }
 
         static int Sum;
-        static void SumPrime(object sender, CallbackArg arg) {
+        static void SumPrime(object sender, EventArgs arg) {
             Sum += (arg as PrimeCallbackArg).Prime;
         }
 
@@ -159,16 +159,13 @@ namespace ConsoleApp1
             // Codes for event
             //// Code with delegate
             PrimeGenerator gen = new PrimeGenerator();
-            PrimeGenerator.PrimeDelegate callprint = PrintPrime;
-            gen.AddDelegate(callprint);
-            PrimeGenerator.PrimeDelegate callsum = SumPrime;
-            gen.AddDelegate(callsum);
-
+            gen.PrimeGenerated += PrintPrime;
+            gen.PrimeGenerated += SumPrime;
             gen.Run(10);
             Console.WriteLine();
             Console.WriteLine(Sum);
 
-            gen.RemoveDelegate(callsum);
+            gen.PrimeGenerated -= SumPrime;
             gen.Run(15);
         }
     }
