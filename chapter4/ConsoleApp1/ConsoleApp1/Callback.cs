@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    delegate int GetResultDelegate();
     class Target {
-        public void Do(Source obj) {
-            obj.GetResult();
+        public void Do(GetResultDelegate getResult) {
+            getResult();
         }
     }
 
@@ -19,7 +20,7 @@ namespace ConsoleApp1
 
         public void Test() {
             Target target = new Target();
-            target.Do(this);
+            target.Do(new GetResultDelegate(this.GetResult));
         }
     }
 }
